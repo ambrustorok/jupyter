@@ -77,3 +77,6 @@ This command exports the environment variable `JUPYTER_CONFIG_DIR` with the spec
 setx JUPYTER_CONFIG_DIR D:\OneDrive\Projects\virtualenvs
 ```
 
+### 7. Syntax Highlighting Issues
+- Reference: [Text editor syntax highlighting does not work](https://discourse.jupyter.org/t/text-editor-syntax-highlighting-does-not-work/13843)
+
