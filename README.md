@@ -1,16 +1,16 @@
-## Guide to Setting Up Jupyter on Windows
+## Setting Up Jupyter on Windows
 
-This guide outlines the process of setting up Jupyter on Windows, including installing extensions and configuring different kernels for various projects.
+This guide provides step-by-step instructions for setting up Jupyter on Windows, including installing extensions and configuring different kernels for various projects.
 
-### Creating a Python Virtual Environment
+### 1. Creating a Python Virtual Environment
 
-To begin, create a Python virtual environment using the following command:
+First, create a Python virtual environment with the following command:
 
 ```cmd
 python -m venv kernel_2024_03_22
 ```
 
-### Activating the Virtual Environment
+### 2. Activating the Virtual Environment
 
 Activate the virtual environment in Windows using:
 
@@ -18,21 +18,23 @@ Activate the virtual environment in Windows using:
 .\kernel_2024_03_22\Scripts\activate
 ```
 
-### Adding a New Kernel
+### 3. Adding and Removing Kernels
 
-Follow these steps to add your virtual environment to the Jupyter kernel:
+#### Adding a New Kernel
 
-- Refer to this guide: [How to Add Your Virtual Environment to the Jupyter Kernel in Windows](https://python.plainenglish.io/how-to-add-your-virtual-environment-to-the-jupyter-kernel-in-windows-ec9834153eb4)
+To add your virtual environment to the Jupyter kernel, follow these steps:
 
-### Removing a Kernel
+- Reference: [How to Add Your Virtual Environment to the Jupyter Kernel in Windows](https://python.plainenglish.io/how-to-add-your-virtual-environment-to-the-jupyter-kernel-in-windows-ec9834153eb4)
 
-To remove a kernel, follow these steps:
+#### Removing a Kernel
 
-- See instructions: [Remove the Kernel on a Jupyter Notebook](https://stackoverflow.com/questions/42635310/remove-the-kernel-on-a-jupyter-notebook)
+If you need to remove a kernel, follow these instructions:
 
-### Editing Default Terminal
+- Reference: [Remove the Kernel on a Jupyter Notebook](https://stackoverflow.com/questions/42635310/remove-the-kernel-on-a-jupyter-notebook)
 
-Modify the default terminal by following these steps:
+### 4. Editing Default Terminal
+
+Modify the default terminal as follows:
 
 - Reference: [How to Change Jupyter Notebook Windows Shell to Bash](https://stackoverflow.com/questions/52330492/how-to-change-jupyter-notebook-windows-shell-to-bash)
   
@@ -40,18 +42,18 @@ Modify the default terminal by following these steps:
   c.ServerApp.terminado_settings = { 'shell_command': [r'C:\Program Files\Git\bin\bash.exe'] }
   ```
 
-### Running Jupyter Notebook on Startup
+### 5. Running Jupyter Notebook on Startup
 
-To run Jupyter Notebook on startup, perform the following:
+Configure Jupyter Notebook to run on startup by following these steps:
 
 1. Press `Windows` + `R`.
-2. Type `taskschd.msc` and hit Enter.
+2. Type `taskschd.msc` and press Enter.
 3. Click on `Task Scheduler Library`.
 4. Click `Create Task`.
 5. Set the name and configure triggers to "At log on" for your user.
-6. Set actions to execute `D:\OneDrive\Projects\virtualenvs\start_jupyter.bat`.
+6. Set actions to execute `start_jupyter.bat`.
 
-### start_jupyter.bat File
+### `start_jupyter.bat` File
 
 The `start_jupyter.bat` file contains:
 
@@ -62,9 +64,16 @@ call D:\OneDrive\Projects\virtualenvs\kernel_2024_03_22\Scripts\activate
 jupyter notebook
 ```
 
-### Custom Location for Config File
+### 6. Custom Location for Config File
 
-You can specify a custom location for the Jupyter config file using an environment variable:
+Specify a custom location for the Jupyter config file using an environment variable:
 
 - Env variable: `JUPYTER_CONFIG_DIR`
 - Path: `D:\OneDrive\Projects\virtualenvs`
+
+
+This command exports the environment variable `JUPYTER_CONFIG_DIR` with the specified path.
+```cmd
+setx JUPYTER_CONFIG_DIR D:\OneDrive\Projects\virtualenvs
+```
+
